@@ -1,2 +1,0 @@
-# finaly
-full site development
