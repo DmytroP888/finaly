@@ -12,7 +12,7 @@ import Verdana_woff2 from './Verdana-Bold.woff2';
 export default createGlobalStyle`
     /* GothamPro_Bold */
     @font-face {
-        font-family: 'GothamPro-bold';
+        font-family: 'GothamPro-700';
         font-style: normal;
         font-weight: 700;
         src: local(''), local(''),
