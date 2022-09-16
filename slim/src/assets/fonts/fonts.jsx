@@ -30,7 +30,7 @@ export default createGlobalStyle`
     }
     /* Verdana_Bold */
     @font-face {
-        font-family: 'Verdana-bold';
+        font-family: 'Verdana-700';
         font-style: normal;
         font-weight: 700;
         src: local(''), local(''),

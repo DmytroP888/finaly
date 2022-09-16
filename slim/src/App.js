@@ -5,7 +5,7 @@ import GlobalStylesReset from './assets/reset'
 import Router from './Router'
 
 // import Header from "./components/Header";
-import MainPageDesktop from "./pages/MainPage/MainPageDesktop";
+import MainPage from "./pages/MainPage"
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
       <GlobalStylesReset />
 
       {/* <Header /> */}
-      <MainPageDesktop />
+      <MainPage />
       <Router></Router>
     </div>
   )

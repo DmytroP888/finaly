@@ -24,6 +24,7 @@ import {
 
 export const HeadLeftBlock = styled.div` 
     display: flex;
+    position: absolute;
 `;
 
 export const Logo = styled.img` 
@@ -53,14 +54,17 @@ export const LinkMenu = styled.li`
     display: inline;
 `;
 
-export const FigureBackground = styled.div` 
-    margin-right: 0px;
-    margin-bottom: 0px;
-    width: 602.01px;
+export const FigureBackgroundPNG = styled.img` 
+    width: 602px;
     height: 816px;
+    float: right;
+    margin-top: 34px;
 `;
 
-export const FigureBackgroundPNG = styled.img` 
-    margin-left: 20px;
+export const Screensaver = styled.img` 
+    float: right;
+    height: 822px;
+    position: absolute;
+    right: 0px;
 `;
 
