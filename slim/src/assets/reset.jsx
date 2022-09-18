@@ -117,11 +117,6 @@ export default createGlobalStyle`
     :where([draggable="true"]) {
         -webkit-user-drag: element;
     }
-
-   input[type="checkbox"],
-    input[type="radio"] {
-        all: revert;
-    }
+}
 
 `
-

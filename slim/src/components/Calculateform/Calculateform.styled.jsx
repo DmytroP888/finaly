@@ -1,35 +1,32 @@
-import styled
-    // , { css } 
-    from "styled-components"
+import styled from "styled-components"
 
 import {
     WHITE,
-    // GRAY_WHITE,   
     GRAY_LIGHT,
     GRAY_BLUE,
-    // GRAY_GRADIENT,
     GRAY_DARK,
-    ORANGE_RED,
-    // CYAN_BLUE,    
-    // CYAN_DARK,    
-    // BLACK        
+    ORANGE_RED
 } from "../../assets/themes/colors"
-
-// export const FontCalcform = css` 
-//     font-family: "Verdana-700";
-//     line-height: 15px;
-//     font-size: 12px;
-//     letter-spacing: 0.04em;
-// `;
 
 export const WrapperCalcform = styled.article` 
     display: flex;
     flex-direction: column;
     position: absolute;
-    width: 608px;
+    width: 545px;
     height: 343px;
     left: 16px;
     top: 293px;
+    z-index: 5;
+    @media (max-width: 1000px){
+        left: 32px;
+        top: 180px;
+        z-index: 5;
+    }
+    @media (max-width: 600px){
+        width: 280px;
+        left: 20px;
+        top: 112px;
+    }
 `;
 
 export const TitleCalcform = styled.h1` 
@@ -37,13 +34,33 @@ export const TitleCalcform = styled.h1`
     font-size: 34px;
     line-height: 41px;
     color: ${GRAY_DARK};
+    @media (max-width: 600px){
+        font-family: "Verdana-700";
+        font-size: 18px;
+        line-height: 26px;
+    }
 `;
 
-export const WrapperBlockInputs = styled.div`
+export const FormBlockInputs = styled.form`
     display: flex; 
+    padding-top: 27px;
     flex-direction: row;
     flex-wrap: wrap;
+    @media (max-width: 600px){
+        padding-top: 0px;
+`;
 
+export const LeftBlockInputs = styled.div`
+    display: flex; 
+    width: 240px;
+    flex-direction: column;
+    margin-right: 32px;
+`;
+
+export const RightBlockInputs = styled.div`
+    display: flex; 
+    width: 240px;
+    flex-direction: column;
 `;
 
 export const BlockInputs = styled.div`
@@ -51,77 +68,84 @@ export const BlockInputs = styled.div`
     width: 240px;
     border-bottom: 1px solid ${GRAY_LIGHT};
     margin: 40px 32px 0px 0px;
-        font-family: "Verdana-700";
+    font-family: "Verdana-700";
     font-size: 14px;
     line-height: 17px;
     letter-spacing: 0.04em;
     color: ${GRAY_BLUE};
+    @media (max-width: 600px){
+        height: 24px;
+        margin: 32px 32px 0px 0px;
+        display: flex;
+`;
+
+export const TitleRadio = styled(BlockInputs)`
+    @media (max-width: 600px){
+        height: 16px;
+        margin: 32px 32px 0px 0px;
+        border-bottom: none;
+`;
+
+export const BlockRadio = styled.div`
+    display: flex;
 `;
 
 export const Input = styled.input`
-
+    width: 240px;
+    text-align: center;
+    @media (max-width: 600px){
+        width: 0px;
+        margin-left: 5px;
+        text-align: center;
+        flex-grow: 1;
+        margin-left: 5px;
 `;
+
+export const LabelInput = styled.label`
+`;
+
+export const LabelRadio = styled.label`
+    font-family: "Verdana-400";
+    color: ${GRAY_BLUE};
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.04em;
+    position: absolute;
+    display: flex;
+    margin: 0px -14px 0px 0px;
+`;
+
+
 
 export const InputRadio = styled.input`
-position: absolute;
-height: 16px;
-width: 16px;
-cursor: pointer;
-opacity: 0;
-z-index: 5;
-margin: -3px 0px 0px -3px;
-`;
-
-export const BackgroundRadio = styled.div`
-positio: relative;
-width: 20px;
-height: 20px;
-border-radius: 50%;
-background: ${WHITE};
-border: 1px solid ${GRAY_LIGHT};
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    opacity: 0;
+    margin: -1px;
+    &:checked + ${LabelRadio} {
+        font-family: "Verdana-700";
+        color: ${ORANGE_RED};
+    };
 `;
 
 export const RadioChecked = styled.div`
-position: absolute;
-margin: 3.5px;
-width: 10px;
-height: 10px;
-border-radius: 50%;
-background: ${ORANGE_RED};
-opacity: 0;
-z-index: 4;
-${InputRadio}:checked  {
-    opacity: 1;
-}
-`;
-
-
-
-
-export const HiddenRadioButton = styled.input.attrs({ type: "radio" })`
-    height: 25px;
-    width: 25px;
-    cursor: pointer;
-    position: absolute;
-    opacity: 0;
-  `;
-
-export const RadioButton = styled.span`
-    width: 13px;
-    height: 13px;
+    margin: 8px 45px 0px 0px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    background-color: blue;
-    pointer-events: none;
-  
-    ${HiddenRadioButton}:checked + && {
-      background-color: red;
-    }
-  `;
-
-
-
-
-
-
-
-
+    background: ${WHITE};
+    border: 1px solid ${GRAY_LIGHT};
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    ${InputRadio}:checked  {
+        background: ${ORANGE_RED};
+        margin: 4px;
+        border-radius: 50%;
+        opacity: 1;
+        height: 10px;
+        width: 10px; 
+    };
+`;

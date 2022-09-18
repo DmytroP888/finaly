@@ -1,6 +1,3 @@
-// const accent = '#FFBC33'
-// export const MAIN_LIGHT = accent
-
 export const WHITE = '#FFFFFF'
 export const GRAY_WHITE = '#EFF1F3'
 export const GRAY_LIGHT = '#E0E0E0'
@@ -11,3 +8,5 @@ export const ORANGE_RED = '#FC842D'
 export const CYAN_BLUE = '#F0F1F3'
 export const CYAN_DARK = '#264061'
 export const BLACK = '#000000'
+export const ORANGE_RED_SHADOW = 'rgba(252, 132, 45, 0.5)'
+export const STRAWB_SHADOW = 'rgba(0,0,0,0.3)'

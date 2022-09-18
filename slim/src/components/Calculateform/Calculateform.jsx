@@ -3,63 +3,69 @@ import React from "react"
 import {
     WrapperCalcform,
     TitleCalcform,
-    WrapperBlockInputs,
+    FormBlockInputs,
     BlockInputs,
+    LeftBlockInputs,
+    RightBlockInputs,
+    TitleRadio,
+    BlockRadio,
     Input,
+    RadioChecked,
     InputRadio,
-    HiddenRadioButton,
-    RadioButton,
-    BackgroundRadio,
-    RadioChecked
-
-
+    LabelInput,
+    LabelRadio
 } from './Calculateform.styled'
 
 const Calculateform = () => {
-
-
     return (
         <>
             <WrapperCalcform>
                 <TitleCalcform>
                     Calculate your daily calorie intake right now
                 </TitleCalcform>
-
-                <WrapperBlockInputs>
-                    <BlockInputs>Height*
-                        <Input></Input>
-                    </BlockInputs>
-                    <BlockInputs>Age *
-                        <Input></Input>
-                    </BlockInputs>
-                    <BlockInputs>Current weight *
-                        <Input></Input>
-                    </BlockInputs>
-                    <BlockInputs>Desired weight *
-                        <Input></Input>
-                    </BlockInputs>
-                    <BlockInputs>Blood type *
-                        <Input></Input>
-                    </BlockInputs>
-
-
-                    <input type="radio" value={2} name='bloodtype' ></input>
-                    <InputRadio type='radio' value={1} name='bloodtype' ></InputRadio>
-
-                    <BackgroundRadio>
-                        <RadioChecked>
-                            <InputRadio type='radio' value={1} name='bloodtype' ></InputRadio>
-                        </RadioChecked>
-                    </BackgroundRadio>
-                    <BackgroundRadio></BackgroundRadio>
-                    <BackgroundRadio></BackgroundRadio>
-
-
-                </WrapperBlockInputs>
-
-
+                <FormBlockInputs>
+                    <LeftBlockInputs>
+                        <BlockInputs>
+                            <LabelInput htmlFor="calculateHeight">Height*</LabelInput>
+                            <Input type='number' name='calculate' step="1" min="100" max="250" id="calculateHeight" required />
+                        </BlockInputs>
+                        <BlockInputs>
+                            <LabelInput htmlFor="calculateAge">Age *</LabelInput>
+                            <Input type='number' name='calculate' step="1" min="18" max="100" id="calculateAge" required />
+                        </BlockInputs>
+                        <BlockInputs>
+                            <LabelInput htmlFor="calculateCurWeight">Current weight *</LabelInput>
+                            <Input type='number' name='calculate' step="1" min="20" max="500" id="calculateCurWeight" required />
+                        </BlockInputs>
+                    </LeftBlockInputs>
+                    <RightBlockInputs>
+                        <BlockInputs>
+                            <LabelInput htmlFor="calculateDesWeight">Desired weight *</LabelInput>
+                            <Input type='number' name='calculate' step="1" min="20" max="500" id="calculateDesWeight" required />
+                        </BlockInputs>
+                        <TitleRadio>Blood type *
+                        </TitleRadio>
+                        <BlockRadio>
+                            <RadioChecked>
+                                <InputRadio type='radio' value={1} name='bloodtype' id="1" defaultChecked />
+                                <LabelRadio htmlFor="1">1</LabelRadio>
+                            </RadioChecked>
+                            <RadioChecked>
+                                <InputRadio type='radio' value={2} name='bloodtype' id="2" />
+                                <LabelRadio htmlFor="2">2</LabelRadio>
+                            </RadioChecked>
+                            <RadioChecked>
+                                <InputRadio type='radio' value={3} name='bloodtype' id='3' />
+                                <LabelRadio htmlFor="3">3</LabelRadio>
+                            </RadioChecked>
+                            <RadioChecked>
+                                <InputRadio type='radio' value={4} name='bloodtype' id='4' />
+                                <LabelRadio htmlFor="4">4</LabelRadio>
+                            </RadioChecked>
+                        </BlockRadio>
+                    </RightBlockInputs>
+                </FormBlockInputs>
             </WrapperCalcform>
-
         </>
     )
 }
