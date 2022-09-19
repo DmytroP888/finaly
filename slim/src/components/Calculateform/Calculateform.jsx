@@ -2,6 +2,7 @@ import React from "react"
 
 import {
     WrapperCalcform,
+    BoxcontrolWidth,
     TitleCalcform,
     FormBlockInputs,
     BlockInputs,
@@ -13,17 +14,21 @@ import {
     RadioChecked,
     InputRadio,
     LabelInput,
-    LabelRadio
+    LabelRadio,
+    ButtonCalcform
 } from './Calculateform.styled'
 
 const Calculateform = () => {
     return (
         <>
             <WrapperCalcform>
-                <TitleCalcform>
-                    Calculate your daily calorie intake right now
-                </TitleCalcform>
+                <BoxcontrolWidth>
+                    <TitleCalcform>
+                        Calculate your daily calorie intake right now
+                    </TitleCalcform>
+                </BoxcontrolWidth>
                 <FormBlockInputs>
+
                     <LeftBlockInputs>
                         <BlockInputs>
                             <LabelInput htmlFor="calculateHeight">Height*</LabelInput>
@@ -64,6 +69,10 @@ const Calculateform = () => {
                             </RadioChecked>
                         </BlockRadio>
                     </RightBlockInputs>
+
+                    <ButtonCalcform>Start losing weight</ButtonCalcform>
+
+
                 </FormBlockInputs>
             </WrapperCalcform>
         </>

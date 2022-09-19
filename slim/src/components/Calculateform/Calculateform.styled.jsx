@@ -5,7 +5,8 @@ import {
     GRAY_LIGHT,
     GRAY_BLUE,
     GRAY_DARK,
-    ORANGE_RED
+    ORANGE_RED,
+    ORANGE_RED_SHADOW
 } from "../../assets/themes/colors"
 
 export const WrapperCalcform = styled.article` 
@@ -23,9 +24,15 @@ export const WrapperCalcform = styled.article`
         z-index: 5;
     }
     @media (max-width: 600px){
-        width: 280px;
+        width: 100%;
         left: 20px;
         top: 112px;
+    }
+`;
+
+export const BoxcontrolWidth = styled.div`
+    @media (max-width: 600px){
+        max-width: 280px;
     }
 `;
 
@@ -48,6 +55,7 @@ export const FormBlockInputs = styled.form`
     flex-wrap: wrap;
     @media (max-width: 600px){
         padding-top: 0px;
+        max-width: 241px;
 `;
 
 export const LeftBlockInputs = styled.div`
@@ -148,4 +156,34 @@ export const RadioChecked = styled.div`
         height: 10px;
         width: 10px; 
     };
+`;
+
+export const ButtonCalcform = styled.button`
+    margin-top: 291px;    
+    width: 210px;
+    height: 43px;
+    left: 323px;
+    position: absolute;
+    background: ${ORANGE_RED};
+    box-shadow: 0px 4px 10px ${ORANGE_RED_SHADOW};
+    border-radius: 30px;
+    font-family: "Verdana-700";
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.04em;
+    color: ${WHITE};
+    z-index: 5;
+    @media (max-width: 1000px){
+        left: 0px;
+        z-index: 5;
+    }
+    @media (max-width: 600px){
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        top: 393px;
+    }
 `;

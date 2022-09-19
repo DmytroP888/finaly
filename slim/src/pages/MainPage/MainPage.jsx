@@ -20,7 +20,6 @@ import {
     MainpageTabletStrawb,
     MainpageTabletBanana,
     Screensaver,
-    ButtonCalcform
 } from './MainPage.styled'
 import {
     FigureBackgroundAvif,
@@ -77,7 +76,6 @@ const MainPage = () => {
                 </NavBlock>
             </Header>
             <Calculateform />
-            <ButtonCalcform>Start losing weight</ButtonCalcform>
             <DesktopWidth>
                 <picture>
                     <source srcSet={FigureBackgroundWebp} type="image/webp" />

@@ -69,37 +69,6 @@ export const LinkMenu = styled.li`
     display: inline;
 `;
 
-export const ButtonCalcform = styled.button`
-    width: 210px;
-    height: 43px;
-    left: 339px;
-    top: 696px;
-    position: absolute;
-    background: ${ORANGE_RED};
-    box-shadow: 0px 4px 10px ${ORANGE_RED_SHADOW};
-    border-radius: 30px;
-    font-family: "Verdana-700";
-    font-size: 14px;
-    line-height: 17px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    letter-spacing: 0.04em;
-    color: ${WHITE};
-    z-index: 5;
-    @media (max-width: 1000px){
-        left: 32px;
-        top: 583px;
-        z-index: 5;
-    }
-    @media (max-width: 600px){
-        top: 505px;
-        left: 0;
-        right: 0;
-        margin: auto;
-    }
-`;
-
 // --------------------- IMG ------------------------
 export const ContainerRelative = styled.div` 
     position: relative;
