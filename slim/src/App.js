@@ -5,8 +5,7 @@ import GlobalStylesReset from './assets/reset'
 // import Router from './Router'
 
 // import MainPage from "./pages/MainPage"
-// import Modal from "./components/Modal"
-import Calculateform from "./components/Calculateform"
+import Modal from "./components/Modal"
 
 function App() {
   return (
@@ -15,8 +14,7 @@ function App() {
       <GlobalStylesReset />
 
       {/* <MainPage /> */}
-      {/* <Modal /> */}
-      <Calculateform />
+      <Modal />
       {/* <Router></Router> */}
     </div>
   )

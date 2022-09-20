@@ -175,6 +175,7 @@ export const ButtonCalcform = styled.button`
     justify-content: center;
     letter-spacing: 0.04em;
     color: ${WHITE};
+    cursor: pointer;
     z-index: 5;
     @media (max-width: 1000px){
         left: 0px;
@@ -182,7 +183,7 @@ export const ButtonCalcform = styled.button`
     }
     @media (max-width: 600px){
         margin: 0 auto;
-        left: 0;
+        left: -35px;
         right: 0;
         top: 393px;
     }

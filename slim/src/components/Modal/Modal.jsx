@@ -1,8 +1,7 @@
 import React from "react"
 
-import { GRAY_BLUE, GRAY_DARK } from '../../assets/themes/colors'
-
 import {
+    // MobileWidth,
     Tintedwindow,
     BoxModal,
     СrossСlosure,
@@ -12,12 +11,16 @@ import {
     NumberKcal,
     Kcal,
     Line,
-    FoodsBlock
+    FoodsBlock,
+    Buttonyellow
 } from './Modal.styled'
 
 const Modal = () => {
     return (
         <>
+            {/* <MobileWidth>
+        </MobileWidth> */}
+
             <Tintedwindow>
                 <BoxModal>
                     <СrossСlosure>&times;</СrossСlosure>
@@ -32,8 +35,7 @@ const Modal = () => {
                         </BlockKcal>
                         <Line>Foods you should not eat</Line>
                         <FoodsBlock>
-                            1. Dsfgsdfgsdfgs
-                            2. Sgvsdfgsdfg
+                            3. Kdsdfsdfsdfs
                             3. Kdsdfsdfsdfs
                             3. Kdsdfsdfsdfs
                             3. Kdsdfsdfsdfs
@@ -47,6 +49,7 @@ const Modal = () => {
                             3. Kdsdfsdfsdfs
                         </FoodsBlock>
 
+                        <Buttonyellow>Start losing weight</Buttonyellow>
 
                     </BlockContent>
 

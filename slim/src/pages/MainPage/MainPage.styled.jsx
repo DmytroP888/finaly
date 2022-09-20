@@ -3,8 +3,6 @@ import styled from "styled-components"
 import {
     WHITE,
     GRAY_LIGHT,
-    ORANGE_RED,
-    ORANGE_RED_SHADOW,
     STRAWB_SHADOW
 } from "../../assets/themes/colors"
 

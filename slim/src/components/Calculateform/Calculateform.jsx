@@ -28,7 +28,6 @@ const Calculateform = () => {
                     </TitleCalcform>
                 </BoxcontrolWidth>
                 <FormBlockInputs>
-
                     <LeftBlockInputs>
                         <BlockInputs>
                             <LabelInput htmlFor="calculateHeight">Height*</LabelInput>
@@ -69,10 +68,7 @@ const Calculateform = () => {
                             </RadioChecked>
                         </BlockRadio>
                     </RightBlockInputs>
-
-                    <ButtonCalcform>Start losing weight</ButtonCalcform>
-
-
+                    <ButtonCalcform type="submite">Start losing weight</ButtonCalcform>
                 </FormBlockInputs>
             </WrapperCalcform>
         </>

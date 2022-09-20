@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 import {
     WHITE,
+    GRAY_WHITE,
     GRAY_LIGHT,
     GRAY_BLUE,
     GRAY_DARK,
@@ -9,7 +10,7 @@ import {
     TINTED_MODAL,
     MODAL_SHADOW,
     CYAN_DARK,
-    BLACK
+    ORANGE_RED_SHADOW,
 } from "../../assets/themes/colors"
 
 export const Tintedwindow = styled.div` 
@@ -17,6 +18,9 @@ export const Tintedwindow = styled.div`
     width: 100%;
     height: 100%;
     background: ${TINTED_MODAL};
+    @media (max-width: 600px){
+        background: ${GRAY_WHITE};
+    }
 `;
 
 export const BoxModal = styled.div`
@@ -30,6 +34,12 @@ export const BoxModal = styled.div`
     height: 573px;
     background: ${WHITE};
     box-shadow: 0px 22px 40px ${MODAL_SHADOW};
+    @media (max-width: 740px){
+        width: 640px;
+    }
+    @media (max-width: 680px){
+        width: 550px;
+    }
 `;
 
 export const СrossСlosure = styled.div`
@@ -42,11 +52,17 @@ export const СrossСlosure = styled.div`
 
 export const BlockContent = styled.div`
     width: 400px;
-    height: 430px;
-    margin: 64px 136px 80px 136px;
+    height: 450px;
+    margin: 60px 136px 60px 140px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media (max-width: 740px){
+        margin: 60px 126px 60px 126px;
+    }
+    @media (max-width: 680px){
+        margin: 60px 75px 60px 75px;
+    }
 `;
 
 export const TitleModal = styled.h2`
@@ -65,6 +81,9 @@ export const BlockKcal = styled.div`
     flex-wrap: wrap;
     width: 600px;
     margin-top: 36px;
+    @media (max-width: 680px){
+        width: 450px;
+    }
 `;
 
 export const NumberKcal = styled.div`
@@ -77,6 +96,9 @@ export const NumberKcal = styled.div`
     overflow-x: overlay;
     max-width: 450px;
     height: 80px;
+    @media (max-width: 680px){
+        max-width: 350px;
+    }
 `;
 
 export const Kcal = styled.div`
@@ -90,7 +112,7 @@ export const Kcal = styled.div`
 `;
 
 export const Line = styled.span`
-    margin-top: 32px;
+    margin-top: 25px;
     padding-top: 12px;
     width: 330px;
     height: 50px;
@@ -113,3 +135,26 @@ export const FoodsBlock = styled.div`
     overflow: auto;
 `;
 
+export const Buttonyellow = styled.button`
+    margin-top: 35px;    
+    width: 210px;
+    height: 43px;
+    background: ${ORANGE_RED};
+    box-shadow: 0px 4px 10px ${ORANGE_RED_SHADOW};
+    border-radius: 30px;
+    font-family: "Verdana-700";
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.04em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: ${WHITE};
+    cursor: pointer;
+`;
+
+// export const MobileWidth = styled.div`
+//     @media only screen and (min-width: 600px){
+//         display: none;
+//     }
+// `;
