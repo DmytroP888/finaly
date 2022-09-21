@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useEffect, useCallback } from "react"
+import { NavLink } from 'react-router-dom'
 
 import {
-    // MobileWidth,
     Tintedwindow,
+    ExitArrow,
     BoxModal,
     СrossСlosure,
     BlockContent,
@@ -12,18 +13,36 @@ import {
     Kcal,
     Line,
     FoodsBlock,
+    FoodsList,
     Buttonyellow
 } from './Modal.styled'
+import ExitArrowModal from '../../assets/svg/modal-exit-arrow.svg'
 
-const Modal = () => {
-    return (
+const Modal = ({ openModal, setOpenModal }) => {
+    const stopPropagate = (e) => { e.stopPropagation() }
+    const closeModal = () => { setOpenModal(false) }
+
+    const keyPress = useCallback(e => {
+        if (e.key === 'Escape' && openModal) {
+            setOpenModal(false)
+        }
+    }, [setOpenModal, openModal]
+    )
+
+    useEffect(() => {
+        document.addEventListener('keydown', keyPress)
+        return () => document.removeEventListener('keydown', keyPress)
+    }, [keyPress]
+    )
+
+    return openModal ? (
         <>
-            {/* <MobileWidth>
-        </MobileWidth> */}
-
-            <Tintedwindow>
-                <BoxModal>
-                    <СrossСlosure>&times;</СrossСlosure>
+            <Tintedwindow onClick={closeModal}>
+                <NavLink to="calculator" >
+                    <ExitArrow src={ExitArrowModal} alt='Return to the previous page ' onClick={closeModal} />
+                </NavLink>
+                <BoxModal onClick={stopPropagate}>
+                    <СrossСlosure onClick={closeModal}>&times;</СrossСlosure>
                     <BlockContent>
                         <TitleModal>
                             Your recommended daily
@@ -35,29 +54,18 @@ const Modal = () => {
                         </BlockKcal>
                         <Line>Foods you should not eat</Line>
                         <FoodsBlock>
-                            3. Kdsdfsdfsdfs
-                            3. Kdsdfsdfsdfs
-                            3. Kdsdfsdfsdfs
-                            3. Kdsdfsdfsdfs
-                            3. Kdsdfsdfsdfs
-                            3. Kdsdfsdfsdfs
-                            3. Kdsdfsdfsdfs
-                            3. Kdsdfsdfsdfs
-                            3. Kdsdfsdfsdfs
-                            3. Kdsdfsdfsdfs
-                            3. Kdsdfsdfsdfs
-                            3. Kdsdfsdfsdfs
+                            <FoodsList>Kdsdccccfs</FoodsList>
+                            <FoodsList>Kdsdfsdfsdfs</FoodsList>
                         </FoodsBlock>
-
-                        <Buttonyellow>Start losing weight</Buttonyellow>
-
+                        <NavLink to="diary" >
+                            <Buttonyellow onClick={closeModal}>Start losing weight</Buttonyellow>
+                        </NavLink>
                     </BlockContent>
-
-
                 </BoxModal>
             </Tintedwindow>
         </>
     )
+        : null
 }
 
 export default Modal

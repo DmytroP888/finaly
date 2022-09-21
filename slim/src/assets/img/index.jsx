@@ -10,9 +10,9 @@ import DesktopLeavesAuthAvif from './desktop-leaves-auth.avif'
 import DesktopLeavesAuthWebp from './desktop-leaves-auth.webp'
 import DesktopLeavesAuthPng from './desktop-leaves-auth.png'
 
-import MainPageImgAvif from './main-page-image.avif'
-import MainPageImgWebp from './main-page-image.webp'
-import MainPageImgPng from './main-page-image.png'
+import MainPageImgAvif from './fruit-photo-desk-main.avif'
+import MainPageImgWebp from './fruit-photo-desk-main.webp'
+import MainPageImgPng from './fruit-photo-desk-main.png'
 
 import FigureBackTabletAvif from './figure-background-tablet.avif'
 import FigureBackTabletWebp from './figure-background-tablet.webp'

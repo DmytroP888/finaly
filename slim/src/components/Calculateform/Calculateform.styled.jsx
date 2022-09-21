@@ -17,14 +17,13 @@ export const WrapperCalcform = styled.article`
     height: 343px;
     left: 16px;
     top: 293px;
-    z-index: 5;
+    z-index: 4;
     @media (max-width: 1000px){
         left: 32px;
         top: 180px;
-        z-index: 5;
     }
     @media (max-width: 600px){
-        width: 100%;
+        width: 93%;
         left: 20px;
         top: 112px;
     }
@@ -183,7 +182,7 @@ export const ButtonCalcform = styled.button`
     }
     @media (max-width: 600px){
         margin: 0 auto;
-        left: -35px;
+        left: -5%;
         right: 0;
         top: 393px;
     }

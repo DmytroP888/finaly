@@ -1,5 +1,8 @@
-import React from "react"
+import React, { useState } from "react"
+import { NavLink } from 'react-router-dom'
+// import { useSelector } from "react-redux"
 
+import Modal from '../Modal'
 import {
     WrapperCalcform,
     BoxcontrolWidth,
@@ -19,6 +22,14 @@ import {
 } from './Calculateform.styled'
 
 const Calculateform = () => {
+
+    // ------------------------- Auth control start ---------------------
+    // const userData = useSelector(state => state.userInfo.userData)
+    const userData = true
+    // ------------------------- Auth control end -----------------------
+
+    const [openModal, setOpenModal] = useState(false)
+    const openedModal = () => { setOpenModal(!openModal) }
     return (
         <>
             <WrapperCalcform>
@@ -30,7 +41,7 @@ const Calculateform = () => {
                 <FormBlockInputs>
                     <LeftBlockInputs>
                         <BlockInputs>
-                            <LabelInput htmlFor="calculateHeight">Height*</LabelInput>
+                            <LabelInput htmlFor="calculateHeight" >Height*</LabelInput>
                             <Input type='number' name='calculate' step="1" min="100" max="250" id="calculateHeight" required />
                         </BlockInputs>
                         <BlockInputs>
@@ -68,9 +79,16 @@ const Calculateform = () => {
                             </RadioChecked>
                         </BlockRadio>
                     </RightBlockInputs>
-                    <ButtonCalcform type="submite">Start losing weight</ButtonCalcform>
+                    {userData ?
+                        <ButtonCalcform type="submite" onClick={openedModal} >Start losing weight</ButtonCalcform>
+                        :
+                        <NavLink to="login">
+                            <ButtonCalcform>Start losing weight</ButtonCalcform>
+                        </NavLink>
+                    }
                 </FormBlockInputs>
             </WrapperCalcform>
+            <Modal openModal={openModal} setOpenModal={setOpenModal} />
         </>
     )
 }

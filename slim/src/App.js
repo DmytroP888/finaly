@@ -4,8 +4,8 @@ import GlobalFonts from './assets/fonts/fonts'
 import GlobalStylesReset from './assets/reset'
 // import Router from './Router'
 
-// import MainPage from "./pages/MainPage"
-import Modal from "./components/Modal"
+import MainPage from "./pages/MainPage"
+// import Modal from "./components/Modal"
 
 function App() {
   return (
@@ -13,8 +13,8 @@ function App() {
       <GlobalFonts />
       <GlobalStylesReset />
 
-      {/* <MainPage /> */}
-      <Modal />
+      <MainPage />
+      {/* <Modal /> */}
       {/* <Router></Router> */}
     </div>
   )

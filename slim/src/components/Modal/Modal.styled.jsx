@@ -17,9 +17,20 @@ export const Tintedwindow = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
+    z-index: 6;
     background: ${TINTED_MODAL};
     @media (max-width: 600px){
         background: ${GRAY_WHITE};
+    }
+`;
+
+export const ExitArrow = styled.img`
+    position: absolute;
+    left: 20px;
+    top: 98px;
+    z-index: 7;
+    @media (min-width: 600px){
+        display:none;
     }
 `;
 
@@ -34,11 +45,17 @@ export const BoxModal = styled.div`
     height: 573px;
     background: ${WHITE};
     box-shadow: 0px 22px 40px ${MODAL_SHADOW};
+    z-index:7;
     @media (max-width: 740px){
         width: 640px;
     }
     @media (max-width: 680px){
         width: 550px;
+    }
+    @media (max-width: 600px){
+        width: 100%;
+        height: 100%;
+        margin-top: 120px;
     }
 `;
 
@@ -48,6 +65,9 @@ export const СrossСlosure = styled.div`
     margin: 19px 25px;
     float: right;
     cursor: pointer;
+    @media (max-width: 600px){
+        display: none;
+    }
 `;
 
 export const BlockContent = styled.div`
@@ -63,14 +83,26 @@ export const BlockContent = styled.div`
     @media (max-width: 680px){
         margin: 60px 75px 60px 75px;
     }
+    @media (max-width: 600px){
+        margin: 0 auto;
+        max-width: 275px;
+    }
 `;
 
 export const TitleModal = styled.h2`
-    font-family: 'Verdana-400';
+    font-family: 'Verdana-700';
     font-size: 26px;
     line-height: 32px;
     text-align: center;
     color: ${GRAY_DARK};
+    @media (max-width: 600px){
+        font-family: 'Verdana-700';
+        font-size: 18px;
+        line-height: 26px;
+        max-width: 275px;
+        padding-top: 40px;
+        text-align: left;
+    }
 `;
 
 export const BlockKcal = styled.div`
@@ -83,6 +115,9 @@ export const BlockKcal = styled.div`
     margin-top: 36px;
     @media (max-width: 680px){
         width: 450px;
+    }
+    @media (max-width: 600px){
+        max-width: 275px;
     }
 `;
 
@@ -98,6 +133,9 @@ export const NumberKcal = styled.div`
     height: 80px;
     @media (max-width: 680px){
         max-width: 350px;
+    }
+    @media (max-width: 600px){
+        max-width: 210px;
     }
 `;
 
@@ -122,9 +160,12 @@ export const Line = styled.span`
     line-height: 17px;
     letter-spacing: 0.04em;
     color: ${GRAY_DARK};
+    @media (max-width: 600px){
+        max-width: 275px;
+    }
 `;
 
-export const FoodsBlock = styled.div`
+export const FoodsBlock = styled.ol`
     width: 330px;
     height: 112px;
     font-family: 'Verdana-400';
@@ -133,6 +174,18 @@ export const FoodsBlock = styled.div`
     letter-spacing: 0.04em;
     color: ${GRAY_BLUE};
     overflow: auto;
+    counter-reset:list;
+    @media (max-width: 600px){
+        max-width: 275px;
+    }
+    li:before {
+        counter-increment:list;
+        content: counters(list, ".") ". ";
+    }
+`;
+
+export const FoodsList = styled.li`
+    margin: 15px 0px;
 `;
 
 export const Buttonyellow = styled.button`
@@ -152,9 +205,3 @@ export const Buttonyellow = styled.button`
     color: ${WHITE};
     cursor: pointer;
 `;
-
-// export const MobileWidth = styled.div`
-//     @media only screen and (min-width: 600px){
-//         display: none;
-//     }
-// `;
