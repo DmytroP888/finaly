@@ -4,7 +4,8 @@ import GlobalFonts from './assets/fonts/fonts'
 import GlobalStylesReset from './assets/reset'
 // import Router from './Router'
 
-import MainPage from "./pages/MainPage"
+// import MainPage from "./pages/MainPage"
+import LoginPage from "./pages/LoginPage"
 // import Modal from "./components/Modal"
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
       <GlobalFonts />
       <GlobalStylesReset />
 
-      <MainPage />
+      <LoginPage />
+      {/* <MainPage /> */}
       {/* <Modal /> */}
       {/* <Router></Router> */}
     </div>

@@ -26,6 +26,7 @@ export const Header = styled.header`
     }
     @media (max-width: 340px){
         padding: 16px 15px;
+        min-width: 273px;
     }
 `;
 

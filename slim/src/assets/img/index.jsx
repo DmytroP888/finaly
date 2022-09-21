@@ -38,6 +38,10 @@ import StrawberryMainTabletAvif from './strawberry-main-tablet.avif'
 import StrawberryMainTabletWebp from './strawberry-main-tablet.webp'
 import StrawberryMainTabletPng from './strawberry-main-tablet.png'
 
+import StrawberryLoginTabletAvif from './strawberry-login-registr-tablet.avif'
+import StrawberryLoginTabletWebp from './strawberry-login-registr-tablet.webp'
+import StrawberryLoginTabletPng from './strawberry-login-registr-tablet.png'
+
 export {
     FigureBackgroundAvif,
     FigureBackgroundWebp,
@@ -68,5 +72,8 @@ export {
     MainpageTabletLeavesPng,
     StrawberryMainTabletAvif,
     StrawberryMainTabletWebp,
-    StrawberryMainTabletPng
+    StrawberryMainTabletPng,
+    StrawberryLoginTabletAvif,
+    StrawberryLoginTabletWebp,
+    StrawberryLoginTabletPng
 }
