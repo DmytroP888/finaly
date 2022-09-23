@@ -82,7 +82,7 @@ const Calculateform = () => {
                     {userData ?
                         <ButtonCalcform type="submite" onClick={openedModal} >Start losing weight</ButtonCalcform>
                         :
-                        <NavLink to="login">
+                        <NavLink to="/login">
                             <ButtonCalcform>Start losing weight</ButtonCalcform>
                         </NavLink>
                     }

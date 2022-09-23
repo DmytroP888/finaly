@@ -2,23 +2,15 @@ import React from "react"
 
 import GlobalFonts from './assets/fonts/fonts'
 import GlobalStylesReset from './assets/reset'
-// import Router from './Router'
-
-// import MainPage from "./pages/MainPage"
-import LoginPage from "./pages/LoginPage"
-// import Modal from "./components/Modal"
+import Router from './Router'
 
 function App() {
   return (
-    <div>
+    <>
       <GlobalFonts />
       <GlobalStylesReset />
-
-      <LoginPage />
-      {/* <MainPage /> */}
-      {/* <Modal /> */}
-      {/* <Router></Router> */}
-    </div>
+      <Router />
+    </>
   )
 }
 

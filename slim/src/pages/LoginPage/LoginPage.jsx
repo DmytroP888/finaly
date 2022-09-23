@@ -1,16 +1,16 @@
 import React from "react"
+import { NavLink } from 'react-router-dom'
 
-import Header from '../../components/Header'
+import LoginForm from '../../components/LoginForm'
 import {
     Logo,
-    HeaderDesktop,
     DesktopWidth,
     TabletWidth,
     ContainerRelative,
     FigureBackgroundPNG,
-    MainpageTabletLeaves,
-    MainpageTabletStrawb,
-    MainpageTabletBanana,
+    LoginAuthTabletLeaves,
+    LoginAuthTabletStrawb,
+    LoginAuthTabletBanana,
     Screensaver
 } from './LoginPage.styled'
 import {
@@ -39,11 +39,11 @@ import LogoSVG from '../../assets/svg/logo.svg'
 const LoginPage = () => {
     return (
         <>
-            <HeaderDesktop>
-                <Header />
-            </HeaderDesktop>
+            <LoginForm />
             <DesktopWidth>
-                <Logo src={LogoSVG} alt="Logo header" />
+                <NavLink to="/">
+                    <Logo src={LogoSVG} alt="Logo header" />
+                </NavLink>
                 <picture>
                     <source srcSet={FigureBackgroundWebp} type="image/webp" />
                     <source srcSet={FigureBackgroundAvif} type="image/avif" />
@@ -65,17 +65,17 @@ const LoginPage = () => {
                     <picture>
                         <source srcSet={LogAuthTabletLeavesWebp} type="image/webp" />
                         <source srcSet={LogAuthTabletLeavesAvif} type="image/avif" />
-                        <MainpageTabletLeaves src={LogAuthTabletLeavesPng} alt="Background figure" />
+                        <LoginAuthTabletLeaves src={LogAuthTabletLeavesPng} alt="Background figure" />
                     </picture>
                     <picture>
                         <source srcSet={StrawberryLoginTabletWebp} type="image/webp" />
                         <source srcSet={StrawberryLoginTabletAvif} type="image/avif" />
-                        <MainpageTabletStrawb src={StrawberryLoginTabletPng} alt="Background figure" />
+                        <LoginAuthTabletStrawb src={StrawberryLoginTabletPng} alt="Background figure" />
                     </picture>
                     <picture>
                         <source srcSet={MainpageTabletBananaWebp} type="image/webp" />
                         <source srcSet={MainpageTabletBananaAvif} type="image/avif" />
-                        <MainpageTabletBanana src={MainpageTabletBananaPng} alt="Background figure" />
+                        <LoginAuthTabletBanana src={MainpageTabletBananaPng} alt="Background figure" />
                     </picture>
                 </ContainerRelative>
             </TabletWidth>

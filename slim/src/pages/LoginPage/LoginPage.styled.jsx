@@ -41,20 +41,20 @@ export const Screensaver = styled.img`
     z-index: 1;
 `;
 
-export const MainpageTabletLeaves = styled.img`
+export const LoginAuthTabletLeaves = styled.img`
     position: absolute;    
     top: 45px;
     right: 12px;
 `;
 
-export const MainpageTabletStrawb = styled.img`
+export const LoginAuthTabletStrawb = styled.img`
     position: absolute;
     top: 461px;
     right: 0px;
     filter: drop-shadow(10px 20px 50px ${STRAWB_SHADOW});
 `;
 
-export const MainpageTabletBanana = styled.img`
+export const LoginAuthTabletBanana = styled.img`
     position: absolute;
     z-index: 2;
     right: 0px;
@@ -64,12 +64,6 @@ export const MainpageTabletBanana = styled.img`
 // ---------------- Width --------------------- 
 export const DesktopWidth = styled.div`
     @media only screen and (max-width: 1000px){
-        display: none;
-    }
-`;
-
-export const HeaderDesktop = styled.div`
-    @media only screen and (min-width: 1000px){
         display: none;
     }
 `;

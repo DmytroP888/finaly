@@ -6,7 +6,7 @@ import HeaderUser from './HeaderUser'
 
 const Header = () => {
     // const userData = useSelector(state => state.userInfo.userData)
-    const userData = false
+    const userData = true
     return (
         <>
             {userData ? <HeaderUser /> : <HeaderAuth />}

@@ -1,6 +1,5 @@
 import React from "react"
 
-import Header from '../../components/Header'
 import Calculateform from '../../components/Calculateform'
 import {
     DesktopWidth,
@@ -36,7 +35,6 @@ import {
 const MainPage = () => {
     return (
         <>
-            <Header />
             <Calculateform />
             <DesktopWidth>
                 <picture>

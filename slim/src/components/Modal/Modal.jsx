@@ -57,7 +57,7 @@ const Modal = ({ openModal, setOpenModal }) => {
                             <FoodsList>Kdsdccccfs</FoodsList>
                             <FoodsList>Kdsdfsdfsdfs</FoodsList>
                         </FoodsBlock>
-                        <NavLink to="diary" >
+                        <NavLink to="/diary" >
                             <Buttonyellow onClick={closeModal}>Start losing weight</Buttonyellow>
                         </NavLink>
                     </BlockContent>
