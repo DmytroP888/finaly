@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom'
 import Header from './Header'
+import Footer from './Footer'
 
 const Layout = () => {
     return (
@@ -8,7 +9,7 @@ const Layout = () => {
 
             <Outlet />
 
-            {/* <footer className="container">2021</footer> */}
+            <Footer />
         </>
     )
 }

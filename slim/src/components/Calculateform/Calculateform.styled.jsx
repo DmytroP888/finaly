@@ -17,7 +17,7 @@ export const WrapperCalcform = styled.article`
     height: 343px;
     left: 16px;
     top: 293px;
-    z-index: 4;
+    z-index: 3;
     @media (max-width: 1000px){
         left: 32px;
         top: 180px;
@@ -25,7 +25,7 @@ export const WrapperCalcform = styled.article`
     @media (max-width: 600px){
         width: 93%;
         left: 20px;
-        top: 112px;
+        top: 150px;
     }
 `;
 

@@ -1,111 +1,81 @@
-import React, { useState } from "react"
-import { NavLink, useLocation } from 'react-router-dom'
+import React from "react"
+// import { NavLink } from 'react-router-dom'
 
-import { WHITE, GRAY_BLUE, GRAY_DARK } from '../../assets/themes/colors'
 import {
-    DesktopWidth,
-    TabletWidtUser,
-    Hideondesktop,
-    MobileWidth,
-    Header,
-    Logo,
-    LogoTablet,
-    ExitArrow,
-    NavBlock,
-    LinkMenu,
-    WindowMenuTabletMobile,
-    BlockMenuTabletMobile,
-    NavBlockUser,
+    MainBlockFooter,
+    SummaryBlockFooter,
+    BlockTitleFoter,
+    AuxiliaryBlock,
+    NamedataBlock,
+    DataBlock,
+    NameDataLi,
+    Notfoodblock,
+    DataBlockNotfood,
+    NavBlockUserFooter,
     NameMenuUser,
     ExitUserMenu,
-    BoxMenurightAlignment,
-    MobileHamburgerBox,
-    MobileHamburgerline,
-    СrossСlosureMenu,
-    HidingBlock
-} from './Header.styled'
-import LogoSVG from '../../assets/svg/logo.svg'
-import LogoTabletSVG from '../../assets/svg/logo-tablet.svg'
-import ExitArrowModal from '../../assets/svg/modal-exit-arrow.svg'
-
-const linkActiveColor = ({ isActive }) => { return { color: isActive ? GRAY_DARK : GRAY_BLUE } }
-const linkActiveColorTabletMobile = ({ isActive }) => { return { color: isActive ? WHITE : GRAY_BLUE } }
+    ImageLeaves,
+    ImageLeavesTablet
+} from './Footer.styled'
+import {
+    DesktopLeavesUserAvif,
+    DesktopLeavesUserWebp,
+    DesktopLeavesUserPng,
+    FooterTabletLeavesAvif,
+    FooterTabletLeavesWebp,
+    FooterTabletLeavesPng
+} from '../../assets/img'
 
 const Footer = () => {
-    const location = useLocation()
-    const [menuOpened, setMenuOpened] = useState(false)
-    const toggleMenu = () => { setMenuOpened(!menuOpened) }
-    const closeMenuWindow = () => { setMenuOpened(false) }
-    return (
+    // const userData = useSelector(state => state.userInfo.userData)
+    const userData = true
+    return userData && (
         <>
-            <Header>
-                <NavLink to="/calculator">
-                    <DesktopWidth>
-                        <Logo src={LogoSVG} alt="Logo header" />
-                    </DesktopWidth>
-                    <TabletWidtUser>
-                        <LogoTablet src={LogoTabletSVG} alt="Logo header" onClick={closeMenuWindow} />
-                    </TabletWidtUser>
-                </NavLink>
-                <DesktopWidth>
-                    <NavBlock>
-                        <LinkMenu>
-                            <NavLink to="/diary" style={linkActiveColor} >
-                                Diary
-                            </NavLink>
-                        </LinkMenu>
-                        <LinkMenu>
-                            <NavLink to="/calculator" style={linkActiveColor} >
-                                Calculator
-                            </NavLink>
-                        </LinkMenu>
-                    </NavBlock>
-                </DesktopWidth>
-                <BoxMenurightAlignment>
-                    <TabletWidtUser>
-                        {location.pathname === '/diary' &&
-                            <NavLink to="calculator" >
-                                <ExitArrow src={ExitArrowModal} alt='Return to the previous page' Active={menuOpened} />
-                            </NavLink>
-                        }
-                        <HidingBlock Active={menuOpened}>
-                            <NavBlockUser >
-                                <NameMenuUser>
-                                    Nicsddssdsdsdfasdasdasdasda
-                                </NameMenuUser>
-                                <ExitUserMenu>
-                                    {/* <NavLink to="/calculator" style={linkActiveColor} > */}
-                                    Exit
-                                    {/* </NavLink> */}
-                                </ExitUserMenu>
-                            </NavBlockUser>
-                        </HidingBlock>
-                    </TabletWidtUser>
-                    <Hideondesktop>
-                        <MobileHamburgerBox onClick={toggleMenu}>
-                            <MobileHamburgerline />
-                        </MobileHamburgerBox>
-                    </Hideondesktop>
-                    <MobileWidth>
-                        <MobileHamburgerBox Active={menuOpened} onClick={toggleMenu}>
-                            <MobileHamburgerline />
-                        </MobileHamburgerBox>
-                        <СrossСlosureMenu Active={menuOpened} onClick={toggleMenu}>&times;</СrossСlosureMenu>
-                    </MobileWidth>
-                </BoxMenurightAlignment>
-            </Header>
-            <TabletWidtUser>
-                <WindowMenuTabletMobile Active={menuOpened} >
-                    <BlockMenuTabletMobile>
-                        <NavLink to="/diary" style={linkActiveColorTabletMobile} onClick={toggleMenu}>
-                            DIARY
-                        </NavLink>
-                        <NavLink to="/calculator" style={linkActiveColorTabletMobile} onClick={toggleMenu}>
-                            CALCULATOR
-                        </NavLink>
-                    </BlockMenuTabletMobile>
-                </WindowMenuTabletMobile>
-            </TabletWidtUser>
+            <MainBlockFooter>
+                <NavBlockUserFooter >
+                    <NameMenuUser>
+                        Nicsddss
+                    </NameMenuUser>
+                    <ExitUserMenu>
+                        {/* <NavLink to="/calculator"> */}
+                        Exit
+                        {/* </NavLink> */}
+                    </ExitUserMenu>
+                </NavBlockUserFooter>
+                <SummaryBlockFooter>
+                    <BlockTitleFoter>Summary for 09/26/2022</BlockTitleFoter>
+                    <AuxiliaryBlock>
+                        <NamedataBlock>
+                            <NameDataLi>Left</NameDataLi>
+                            <NameDataLi>Consumed</NameDataLi>
+                            <NameDataLi>Daily rate</NameDataLi>
+                            <NameDataLi>n% of normal</NameDataLi>
+                        </NamedataBlock>
+                        <DataBlock>
+                            <NameDataLi>000 kcal</NameDataLi>
+                            <NameDataLi>000 kcal</NameDataLi>
+                            <NameDataLi>000 kcal</NameDataLi>
+                            <NameDataLi>000 kcal</NameDataLi>
+                        </DataBlock>
+                    </AuxiliaryBlock>
+                </SummaryBlockFooter>
+                <Notfoodblock>
+                    <BlockTitleFoter>Food not recommended</BlockTitleFoter>
+                    <DataBlockNotfood>
+                        Your diet will be displayed here
+                    </DataBlockNotfood>
+                </Notfoodblock>
+                <picture>
+                    <source srcSet={DesktopLeavesUserWebp} type="image/webp" />
+                    <source srcSet={DesktopLeavesUserAvif} type="image/avif" />
+                    <ImageLeaves src={DesktopLeavesUserPng} alt="Image leaves" />
+                </picture>
+                <picture>
+                    <source srcSet={FooterTabletLeavesWebp} type="image/webp" />
+                    <source srcSet={FooterTabletLeavesAvif} type="image/avif" />
+                    <ImageLeavesTablet src={FooterTabletLeavesPng} alt="Image leaves" />
+                </picture>
+            </MainBlockFooter>
         </>
     )
 }

@@ -96,6 +96,8 @@ export const WindowMenuTabletMobile = styled.div`
     background: ${CYAN_DARK};
     width: 100%;
     min-height: 100vh;
+    position: absolute;
+    z-index: 4;
     ${({ Active }) => Active ?
         `display: visible;` :
         `display: none;`

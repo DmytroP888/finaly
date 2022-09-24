@@ -22,6 +22,8 @@ const linkActiveColor = ({ isActive }) => { return { color: isActive ? GRAY_DARK
 
 const HeaderAuth = () => {
     const location = useLocation()
+    // const userData = useSelector(state => state.userInfo.userData)
+    const userData = false
     const navMenu = (
         <NavBlock>
             <LinkMenu>
@@ -37,7 +39,7 @@ const HeaderAuth = () => {
         </NavBlock>
     )
 
-    return (
+    return userData && (
         <>
             <Header>
                 <NavLink to="/" >
