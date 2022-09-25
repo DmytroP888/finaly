@@ -1,5 +1,7 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { NavLink, useLocation } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { getUserDetails } from '../../store'
 
 import { WHITE, GRAY_BLUE, GRAY_DARK } from '../../assets/themes/colors'
 import {
@@ -32,6 +34,14 @@ const linkActiveColor = ({ isActive }) => { return { color: isActive ? GRAY_DARK
 const linkActiveColorTabletMobile = ({ isActive }) => { return { color: isActive ? WHITE : GRAY_BLUE } }
 
 const HeaderAuth = () => {
+    const { userToken } = useSelector((state) => state.user)
+    const dispatch = useDispatch()
+    useEffect(() => {
+        if (userToken) {
+            dispatch(getUserDetails())
+        }
+    }, [userToken, dispatch])
+
     const location = useLocation()
     const [menuOpened, setMenuOpened] = useState(false)
     const toggleMenu = () => { setMenuOpened(!menuOpened) }

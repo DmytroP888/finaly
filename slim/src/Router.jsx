@@ -8,6 +8,7 @@ import LoginPage from './pages/LoginPage'
 import RegistrationPage from './pages/RegistrationPage'
 import DiaryPage from './pages/DiaryPage'
 import CalculatorPage from './pages/CalculatorPage'
+import PrivateRoute from '../src/hoc/PrivateRoute'
 
 const Router = () => {
     return (
@@ -16,8 +17,16 @@ const Router = () => {
                 <Route index element={<MainPage />} />
                 <Route path="login" element={<LoginPage />} />
                 <Route path="auth" element={<RegistrationPage />} />
-                <Route path="diary" element={<DiaryPage />} />
-                <Route path="calculator" element={<CalculatorPage />} />
+                <Route path="diary" element={
+                    <PrivateRoute>
+                        <DiaryPage />
+                    </PrivateRoute>
+                } />
+                <Route path="calculator" element={
+                    <PrivateRoute>
+                        <CalculatorPage />
+                    </PrivateRoute>
+                } />
                 <Route path="*" element={<MainPage />} />
             </Route>
         </Routes>
