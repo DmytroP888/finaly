@@ -38,15 +38,15 @@ const HeaderAuth = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const userName = userInfo && userInfo.user.username
-    const token = userInfo.refreshToken
+    const token = userInfo && userInfo.refreshToken
     useEffect(() => {
         if (token) {
             dispatch(getUserDetails())
         }
     }, [token, dispatch])
 
-    const logout = () => {
-        dispatch(logoutUser())
+    const logout = (token) => {
+        dispatch(logoutUser(token))
         navigate('/')
     }
 

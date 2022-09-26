@@ -34,14 +34,15 @@ const Footer = () => {
     const navigate = useNavigate()
     const { userInfo } = useSelector((state) => state.user)
     const username = userInfo && userInfo.user.username
+    const token = userInfo && userInfo.refreshToken
 
+
+    const logout = (token) => {
+        dispatch(logoutUser(token))
+    }
     // useEffect(() => {
     //     if (!userInfo) navigate('/')
     // }, [navigate, userInfo])
-
-    const logout = () => {
-        dispatch(logoutUser())
-    }
 
     return userInfo &&
         !(location.pathname === '/login') &&
