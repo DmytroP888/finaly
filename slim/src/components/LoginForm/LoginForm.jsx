@@ -1,6 +1,10 @@
-import React from "react"
-import { NavLink } from 'react-router-dom'
+import React, { useEffect, useState } from "react"
+import { NavLink, useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { useForm } from "react-hook-form"
 
+import { userLogin } from '../../store'
+import Error from "../AuthForm/Error"
 import {
     WrapperLoginform,
     TitleLoginform,
@@ -14,24 +18,48 @@ import {
 } from './LoginForm.styled'
 
 const LoginForm = () => {
-    return (
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const { register, handleSubmit } = useForm()
+    const [customError, setCustomError] = useState(null)
+    const { loading, userInfo, error, success } = useSelector((state) => state.user)
+    const token = userInfo && userInfo.refreshToken
+    useEffect(() => {
+        if (userInfo) navigate('/calculator')
+    }, [navigate, userInfo])
+
+    const submitForm = (data) => {
+        if (data.password <= 7) {
+            setCustomError('"password" length must be at least 8 characters long')
+            return
+        }
+        data.email = data.email.toLowerCase()
+        dispatch(userLogin(data))
+    }
+    // useEffect((success) => {
+    //     if (success) navigate('/calculator')
+    // }, [navigate, success])
+
+    return !token && (
         <>
             <WrapperLoginform>
                 <TitleLoginform>
                     Sign in
                 </TitleLoginform>
-                <FormBlockInputs>
+                <FormBlockInputs onSubmit={handleSubmit(submitForm)}>
                     <LeftBlockInputs>
                         <BlockInputs>
                             <LabelInput htmlFor="email" >Email *</LabelInput>
-                            <Input type='email' name='email' id="email" minlength="3" maxlength="254" required />
+                            <Input type='email' {...register("email")} name='email' id="email" minlength="3" maxlength="254" required />
                         </BlockInputs>
                         <BlockInputs>
                             <LabelInput htmlFor="password">Password *</LabelInput>
-                            <Input type='password' name='password' id="password" minlength="8" maxlength="100" required />
+                            <Input type='password' {...register("password")} name='password' id="password" minlength="8" maxlength="100" required />
                         </BlockInputs>
                     </LeftBlockInputs>
-                    <ButtonLogin type="submite" >Login</ButtonLogin>
+                    {error && <Error>{error}</Error>}
+                    {customError && <Error>{customError}</Error>}
+                    <ButtonLogin type="submit" disabled={loading}>Login</ButtonLogin>
                     <NavLink to="/auth">
                         <ButtonRegister >Register</ButtonRegister>
                     </NavLink>

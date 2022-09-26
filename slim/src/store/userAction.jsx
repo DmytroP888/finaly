@@ -49,7 +49,7 @@ export const getUserDetails = createAsyncThunk(
         try {// get user data from store
             const { user } = getState()
             // configure authorization header with user's token
-            const config = { headers: { Authorization: `Bearer ${user.userToken}` } }
+            const config = { headers: { Authorization: `Bearer ${user.refreshToken}` } }
             const { data } =
                 await axios.get(`https://slimmom-backend.goit.global//auth/refresh`, config)
             return data
@@ -68,7 +68,7 @@ export const logoutUser = createAsyncThunk(
     async (arg, { getState, rejectWithValue }) => {
         try {
             const { user } = getState()
-            const config = { headers: { Logout: `Bearer ${user.userToken}` } }
+            const config = { headers: { Logout: `Bearer ${user.refreshToken}` } }
             await axios.get(`https://slimmom-backend.goit.global//auth/logout`, config)
             return {}
         } catch (error) {

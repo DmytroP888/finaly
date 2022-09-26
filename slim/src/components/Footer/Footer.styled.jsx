@@ -183,6 +183,7 @@ export const ExitUserMenu = styled.nav`
     padding-left: 15px;
     display: flex;
     align-items: center;
+    cursor: pointer;
     @media only screen and (max-width: 600px){
         margin-right: 20px;
     }

@@ -1,6 +1,8 @@
-import React from "react"
-import { useLocation } from 'react-router-dom'
+import React, { useEffect } from "react"
+import { useNavigate, useLocation } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 
+import { logoutUser } from '../../store'
 import {
     MainBlockFooter,
     SummaryBlockFooter,
@@ -28,9 +30,20 @@ import {
 
 const Footer = () => {
     const location = useLocation()
-    // const userData = useSelector(state => state.userInfo.userData)
-    const userData = true
-    return userData &&
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const { userInfo } = useSelector((state) => state.user)
+    const username = userInfo && userInfo.user.username
+
+    // useEffect(() => {
+    //     if (!userInfo) navigate('/')
+    // }, [navigate, userInfo])
+
+    const logout = () => {
+        dispatch(logoutUser())
+    }
+
+    return userInfo &&
         !(location.pathname === '/login') &&
         !(location.pathname === '/auth') &&
         !(location.pathname === '/') &&
@@ -39,12 +52,10 @@ const Footer = () => {
                 <MainBlockFooter>
                     <NavBlockUserFooter >
                         <NameMenuUser>
-                            Nicsddss
+                            {username}
                         </NameMenuUser>
-                        <ExitUserMenu>
-                            {/* <NavLink to="/calculator"> */}
+                        <ExitUserMenu onClick={logout} >
                             Exit
-                            {/* </NavLink> */}
                         </ExitUserMenu>
                     </NavBlockUserFooter>
                     <SummaryBlockFooter>

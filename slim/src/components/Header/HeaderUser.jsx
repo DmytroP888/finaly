@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react"
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { getUserDetails } from '../../store'
 
+import { getUserDetails, logoutUser } from '../../store'
 import { WHITE, GRAY_BLUE, GRAY_DARK } from '../../assets/themes/colors'
 import {
     DesktopWidth,
@@ -34,18 +34,27 @@ const linkActiveColor = ({ isActive }) => { return { color: isActive ? GRAY_DARK
 const linkActiveColorTabletMobile = ({ isActive }) => { return { color: isActive ? WHITE : GRAY_BLUE } }
 
 const HeaderAuth = () => {
-    const { userToken } = useSelector((state) => state.user)
+    const { userInfo } = useSelector((state) => state.user)
     const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const userName = userInfo && userInfo.user.username
+    const token = userInfo.refreshToken
     useEffect(() => {
-        if (userToken) {
+        if (token) {
             dispatch(getUserDetails())
         }
-    }, [userToken, dispatch])
+    }, [token, dispatch])
+
+    const logout = () => {
+        dispatch(logoutUser())
+        navigate('/')
+    }
 
     const location = useLocation()
     const [menuOpened, setMenuOpened] = useState(false)
     const toggleMenu = () => { setMenuOpened(!menuOpened) }
     const closeMenuWindow = () => { setMenuOpened(false) }
+
     return (
         <>
             <Header>
@@ -81,12 +90,10 @@ const HeaderAuth = () => {
                         <HidingBlock Active={menuOpened}>
                             <NavBlockUser >
                                 <NameMenuUser>
-                                    Nicsddssdsdsdfasdasdasdasda
+                                    {userName}
                                 </NameMenuUser>
-                                <ExitUserMenu>
-                                    {/* <NavLink to="/calculator" style={linkActiveColor} > */}
+                                <ExitUserMenu onClick={logout}>
                                     Exit
-                                    {/* </NavLink> */}
                                 </ExitUserMenu>
                             </NavBlockUser>
                         </HidingBlock>

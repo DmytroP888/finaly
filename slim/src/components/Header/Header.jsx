@@ -1,15 +1,14 @@
 import React from "react"
-// import { useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 
 import HeaderAuth from "./HeaderAuth"
 import HeaderUser from './HeaderUser'
 
 const Header = () => {
-    // const userData = useSelector(state => state.userInfo.userData)
-    const userData = true
+    const { userInfo } = useSelector((state) => state.user)
     return (
         <>
-            {userData ? <HeaderUser /> : <HeaderAuth />}
+            {userInfo ? <HeaderUser /> : <HeaderAuth />}
         </>
     )
 }

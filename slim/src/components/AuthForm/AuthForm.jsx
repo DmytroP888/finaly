@@ -24,10 +24,12 @@ const AuthForm = () => {
     const { register, handleSubmit } = useForm()
     const [customError, setCustomError] = useState(null)
     const { loading, userInfo, success, error } = useSelector((state) => state.user)
+
     useEffect(() => {
         if (userInfo) navigate('/calculator')
         if (success) navigate('/login')
     }, [navigate, userInfo, success])
+
     const submitForm = (data) => {
         if (data.password <= 7) {
             setCustomError('"password" length must be at least 8 characters long')
@@ -58,11 +60,11 @@ const AuthForm = () => {
                             <Input type='password' {...register("password")} id="password" minlength="8" maxlength="100" required />
                         </BlockInputs>
                     </LeftBlockInputs>
+                    {error && <Error>{error}</Error>}
+                    {customError && <Error>{customError}</Error>}
                     <NavLink to="/login">
                         <ButtonLoginAuthform>Login</ButtonLoginAuthform>
                     </NavLink>
-                    {error && <Error>{error}</Error>}
-                    {customError && <Error>{customError}</Error>}
                     <ButtonRegisterAuthform type="submit" disabled={loading}>Register</ButtonRegisterAuthform>
                 </FormBlockInputs>
             </WrapperAuthform>
