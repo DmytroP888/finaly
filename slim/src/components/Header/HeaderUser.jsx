@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { getUserDetails, logoutUser } from '../../store'
+import { logoutUser } from '../../store'
 import { WHITE, GRAY_BLUE, GRAY_DARK } from '../../assets/themes/colors'
 import {
     DesktopWidth,
@@ -38,14 +38,9 @@ const HeaderAuth = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const userName = userInfo && userInfo.user.username
-    const token = userInfo && userInfo.refreshToken
-    useEffect(() => {
-        if (token) {
-            dispatch(getUserDetails())
-        }
-    }, [token, dispatch])
+    const token = userInfo && userInfo.accessToken
 
-    const logout = (token) => {
+    const logout = () => {
         dispatch(logoutUser(token))
         navigate('/')
     }

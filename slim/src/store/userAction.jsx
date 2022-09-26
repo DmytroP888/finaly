@@ -68,7 +68,7 @@ export const logoutUser = createAsyncThunk(
     async (arg, { getState, rejectWithValue }) => {
         try {
             const { user } = getState()
-            const config = { headers: { Logout: `Bearer ${user.refreshToken}` } }
+            const config = { headers: { Authorization: user.userInfo.accessToken } }
             await axios.get(`https://slimmom-backend.goit.global//auth/logout`, config)
             return {}
         } catch (error) {

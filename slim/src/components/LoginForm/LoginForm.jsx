@@ -22,7 +22,7 @@ const LoginForm = () => {
     const navigate = useNavigate()
     const { register, handleSubmit } = useForm()
     const [customError, setCustomError] = useState(null)
-    const { loading, userInfo, error, success } = useSelector((state) => state.user)
+    const { loading, userInfo, error } = useSelector((state) => state.user)
     const token = userInfo && userInfo.refreshToken
     useEffect(() => {
         if (userInfo) navigate('/calculator')
@@ -36,9 +36,6 @@ const LoginForm = () => {
         data.email = data.email.toLowerCase()
         dispatch(userLogin(data))
     }
-    // useEffect((success) => {
-    //     if (success) navigate('/calculator')
-    // }, [navigate, success])
 
     return !token && (
         <>

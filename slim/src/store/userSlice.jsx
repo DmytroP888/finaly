@@ -64,7 +64,7 @@ const userSlice = createSlice({
         },
         [logoutUser.fulfilled]: (state, { payload }) => {
             state.loading = false
-            state.userInfo = {}
+            state.userInfo = null
         },
         [logoutUser.rejected]: (state, { payload }) => {
             state.loading = false

@@ -1,5 +1,5 @@
-import React, { useEffect } from "react"
-import { useNavigate, useLocation } from 'react-router-dom'
+import React from "react"
+import { useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { logoutUser } from '../../store'
@@ -31,18 +31,13 @@ import {
 const Footer = () => {
     const location = useLocation()
     const dispatch = useDispatch()
-    const navigate = useNavigate()
     const { userInfo } = useSelector((state) => state.user)
     const username = userInfo && userInfo.user.username
     const token = userInfo && userInfo.refreshToken
 
-
-    const logout = (token) => {
+    const logout = () => {
         dispatch(logoutUser(token))
     }
-    // useEffect(() => {
-    //     if (!userInfo) navigate('/')
-    // }, [navigate, userInfo])
 
     return userInfo &&
         !(location.pathname === '/login') &&
