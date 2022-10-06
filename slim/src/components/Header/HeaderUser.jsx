@@ -39,7 +39,6 @@ const HeaderAuth = () => {
     const navigate = useNavigate()
     const userName = userInfo && userInfo.user.username
     const token = userInfo && userInfo.accessToken
-
     const logout = () => {
         dispatch(logoutUser(token))
         navigate('/')

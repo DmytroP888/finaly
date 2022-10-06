@@ -21,7 +21,6 @@ import ExitArrowModal from '../../assets/svg/modal-exit-arrow.svg'
 const Modal = ({ openModal, setOpenModal }) => {
     const stopPropagate = (e) => { e.stopPropagation() }
     const closeModal = () => { setOpenModal(false) }
-
     const keyPress = useCallback(e => {
         if (e.key === 'Escape' && openModal) {
             setOpenModal(false)

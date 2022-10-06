@@ -66,8 +66,12 @@ const userSlice = createSlice({
             state.loading = false
             state.userInfo = null
         },
-        [logoutUser.rejected]: (state, { payload }) => {
+        [logoutUser.rejected]: (state) => {
             state.loading = false
+            state.userInfo = null
+
+            state.userToken = null
+            state.error = null
         },
     },
 })

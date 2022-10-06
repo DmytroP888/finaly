@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useForm } from "react-hook-form"
 
 import { registerUser } from '../../store'
+import Spinner from '../Spinner'
 import Error from "./Error"
 
 import {
@@ -41,33 +42,35 @@ const AuthForm = () => {
 
     return (
         <>
-            <WrapperAuthform >
-                <TitleAuthform  >
-                    Register
-                </TitleAuthform>
-                <FormBlockInputs onSubmit={handleSubmit(submitForm)}>
-                    <LeftBlockInputs>
-                        <BlockInputs>
-                            <LabelInput htmlFor="username" >Name *</LabelInput>
-                            <Input type='text' {...register("username")} id="username" minlength="3" maxlength="254" required />
-                        </BlockInputs>
-                        <BlockInputs>
-                            <LabelInput htmlFor="email" >Email *</LabelInput>
-                            <Input type='email' {...register("email")} id="email" minlength="3" maxlength="254" required />
-                        </BlockInputs>
-                        <BlockInputs>
-                            <LabelInput htmlFor="password">Password *</LabelInput>
-                            <Input type='password' {...register("password")} id="password" minlength="8" maxlength="100" required />
-                        </BlockInputs>
-                    </LeftBlockInputs>
-                    {error && <Error>{error}</Error>}
-                    {customError && <Error>{customError}</Error>}
-                    <NavLink to="/login">
-                        <ButtonLoginAuthform>Login</ButtonLoginAuthform>
-                    </NavLink>
-                    <ButtonRegisterAuthform type="submit" disabled={loading}>Register</ButtonRegisterAuthform>
-                </FormBlockInputs>
-            </WrapperAuthform>
+            {loading ? <Spinner /> :
+                <WrapperAuthform >
+                    <TitleAuthform  >
+                        Register
+                    </TitleAuthform>
+                    <FormBlockInputs onSubmit={handleSubmit(submitForm)}>
+                        <LeftBlockInputs>
+                            <BlockInputs>
+                                <LabelInput htmlFor="username" >Name *</LabelInput>
+                                <Input type='text' {...register("username")} id="username" minlength="3" maxlength="254" required />
+                            </BlockInputs>
+                            <BlockInputs>
+                                <LabelInput htmlFor="email" >Email *</LabelInput>
+                                <Input type='email' {...register("email")} id="email" minlength="3" maxlength="254" required />
+                            </BlockInputs>
+                            <BlockInputs>
+                                <LabelInput htmlFor="password">Password *</LabelInput>
+                                <Input type='password' {...register("password")} id="password" minlength="8" maxlength="100" required />
+                            </BlockInputs>
+                        </LeftBlockInputs>
+                        {error && <Error>{error}</Error>}
+                        {customError && <Error>{customError}</Error>}
+                        <NavLink to="/login">
+                            <ButtonLoginAuthform>Login</ButtonLoginAuthform>
+                        </NavLink>
+                        <ButtonRegisterAuthform type="submit" disabled={loading}>Register</ButtonRegisterAuthform>
+                    </FormBlockInputs>
+                </WrapperAuthform>
+            }
         </>
     )
 }

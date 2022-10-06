@@ -19,6 +19,9 @@ export const Tintedwindow = styled.div`
     height: 100%;
     z-index: 6;
     background: ${TINTED_MODAL};
+    @media (max-width: 1000px){
+        height: calc(100% + 246px);
+    }
     @media (max-width: 600px){
         background: ${GRAY_WHITE};
     }

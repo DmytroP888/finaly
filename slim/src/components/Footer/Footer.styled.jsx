@@ -18,15 +18,18 @@ export const MainBlockFooter = styled.footer`
         height: 326px;
         bottom: 0px;
         top: 700px;
+        z-index: 4;
     }
     @media (max-width: 660px){
         width: 100%;
         height: 380px;
         bottom: 0px;
         top: 700px;
+        z-index: 4;
     }
     @media (max-width: 600px){
         top: 650px;
+        z-index: 4;
     }
 `;
 
