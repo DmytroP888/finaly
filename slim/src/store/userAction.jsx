@@ -63,30 +63,10 @@ export const getUserDetails = createAsyncThunk(
     }
 )
 
-// export const logoutUser = createAsyncThunk(
-//     'user/logout',
-//     async (arg, { getState, rejectWithValue }) => {
-//         try {
-//             const { user } = getState()
-//             const config = { headers: { 'accept': user.userInfo.accessToken } }
-//             await axios.post(`https://slimmom-backend.goit.global//auth/logout`, config)
-//             return {}
-//         } catch (error) {
-//             if (error.response && error.response.data.message) {
-//                 return rejectWithValue(error.response.data.message)
-//             } else {
-//                 return rejectWithValue(error.message)
-//             }
-//         }
-//     }
-// )
-
 export const logoutUser = createAsyncThunk(
     'user/logout',
     async ({ token }, { rejectWithValue }) => {
         try {
-            // const { user } = getState()
-            // const config = { headers: { Authorization: user.userInfo.accessToken } }
             const config = { headers: { 'Content-Type': 'application/json' } }
             await axios.post(`https://slimmom-backend.goit.global/auth/logout`, { token }, config)
             return {}
