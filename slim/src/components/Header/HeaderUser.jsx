@@ -41,6 +41,14 @@ const HeaderAuth = () => {
     const token = userInfo && userInfo.accessToken
     const logout = () => {
         dispatch(logoutUser(token))
+        sessionStorage.clear()
+
+        document.cookie.split(";").forEach((c) => {
+            document.cookie = c
+                .replace(/^ +/, "")
+                .replace(/=.*/, "=;expires=" + new Date(Date.now() - 86400e3).toUTCString())
+        })
+
         navigate('/')
     }
 

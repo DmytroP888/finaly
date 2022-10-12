@@ -11,8 +11,18 @@ export const userLogin = createAsyncThunk(
                 await axios.post('https://slimmom-backend.goit.global/auth/login',
                     { email, password }, config
                 )
+
             // store user's token in local storage
-            localStorage.setItem('userToken', data.userToken)
+
+            localStorage.clear()
+            // localStorage.setItem('userToken', data.accessToken)
+
+            // sessionStorage.clear()
+            sessionStorage.setItem('todaySummary', JSON.stringify(data.todaySummary))
+            sessionStorage.setItem('userInfo', JSON.stringify(data.user))
+
+            document.cookie = "token=" + data.accessToken
+
             return data
         } catch (error) {
             // return custom error message from API if any
