@@ -69,9 +69,16 @@ const userSlice = createSlice({
         [logoutUser.rejected]: (state) => {
             state.loading = false
             state.userInfo = null
-
             state.userToken = null
             state.error = null
+            sessionStorage.clear()
+            document.cookie.split(";").forEach((c) => {
+                document.cookie = c
+                    .replace(/^ +/, "")
+                    .replace(/=.*/, "=;max-age=" + 0 + ";path=/")
+            })
+
+
         },
     },
 })

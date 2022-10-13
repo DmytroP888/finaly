@@ -12,16 +12,12 @@ export const userLogin = createAsyncThunk(
                     { email, password }, config
                 )
 
-            // store user's token in local storage
-
-            localStorage.clear()
-            // localStorage.setItem('userToken', data.accessToken)
-
-            // sessionStorage.clear()
+            // store user's token in session storage
             sessionStorage.setItem('todaySummary', JSON.stringify(data.todaySummary))
             sessionStorage.setItem('userInfo', JSON.stringify(data.user))
-
             document.cookie = "token=" + data.accessToken
+
+            console.log(document.cookie)
 
             return data
         } catch (error) {
