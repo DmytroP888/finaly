@@ -11,13 +11,10 @@ export const userLogin = createAsyncThunk(
                 await axios.post('https://slimmom-backend.goit.global/auth/login',
                     { email, password }, config
                 )
-
             // store user's token in session storage
             sessionStorage.setItem('todaySummary', JSON.stringify(data.todaySummary))
             sessionStorage.setItem('userInfo', JSON.stringify(data.user))
-            document.cookie = "token=" + data.accessToken
-
-            console.log(document.cookie)
+            document.cookie = "google=" + data.accessToken
 
             return data
         } catch (error) {
@@ -71,10 +68,10 @@ export const getUserDetails = createAsyncThunk(
 
 export const logoutUser = createAsyncThunk(
     'user/logout',
-    async ({ token }, { rejectWithValue }) => {
+    async ({ google }, { rejectWithValue }) => {
         try {
             const config = { headers: { 'Content-Type': 'application/json' } }
-            await axios.post(`https://slimmom-backend.goit.global/auth/logout`, { token }, config)
+            await axios.post(`https://slimmom-backend.goit.global/auth/logout`, { google }, config)
             return {}
         } catch (error) {
             if (error.response && error.response.data.message) {

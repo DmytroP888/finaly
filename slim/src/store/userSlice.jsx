@@ -3,9 +3,13 @@ import { createSlice } from '@reduxjs/toolkit'
 import { getUserDetails, registerUser, userLogin, logoutUser } from './userAction'
 
 // initialize userToken from local storage
-const userToken = localStorage.getItem('userToken')
-    ? localStorage.getItem('userToken')
-    : null
+
+const GoogleAds = (name) => {
+    const r = document.cookie.match("\\b" + name + "=([^;]*)\\b")
+    return r ? r[1] : null
+}
+
+const userToken = GoogleAds('google')
 
 const initialState = {
     loading: false,
@@ -29,6 +33,12 @@ const userSlice = createSlice({
             state.loading = false
             state.userInfo = payload
             state.userToken = payload.userToken
+
+            // state.loading = false
+            // state.userInfo = null
+            // state.userToken = null
+            // state.error = null
+            // state.user = null
         },
         [userLogin.rejected]: (state, { payload }) => {
             state.loading = false
@@ -66,21 +76,34 @@ const userSlice = createSlice({
             state.loading = false
             state.userInfo = null
         },
-        [logoutUser.rejected]: (state) => {
+        [logoutUser.rejected]: (state, { payload }) => {
             state.loading = false
             state.userInfo = null
             state.userToken = null
             state.error = null
-            sessionStorage.clear()
-            document.cookie.split(";").forEach((c) => {
-                document.cookie = c
-                    .replace(/^ +/, "")
-                    .replace(/=.*/, "=;max-age=" + 0 + ";path=/")
-            })
+
+            state.user = null
 
 
+            // state = {}
+            // state = undefined
+
+            // return appReducer(state, action);
+
+            // let cleanState = {};
+            // Object.keys(this.state).forEach(x => cleanState[x] = null);
+            // this.setState(cleanState);
+
+            // sessionStorage.clear()
+            // document.cookie.split(";").forEach((c) => {
+            //     document.cookie = c
+            //         .replace(/^ +/, "")
+            //         .replace(/=.*/, "=;max-age=" + 0 + ";path=/")
+            // })
         },
     },
 })
+
+export { GoogleAds }
 
 export default userSlice.reducer
