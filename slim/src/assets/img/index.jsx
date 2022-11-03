@@ -6,13 +6,13 @@ import DesktopGuestAvif from './desktop-guest-image.avif'
 import DesktopGuestWebp from './desktop-guest-image.webp'
 import DesktopGuestPng from './desktop-guest-image.png'
 
-import DesktopLeavesAuthAvif from './desktop-leaves-auth.avif'
-import DesktopLeavesAuthWebp from './desktop-leaves-auth.webp'
-import DesktopLeavesAuthPng from './desktop-leaves-auth.png'
+import DesktopLeavesUserAvif from './desktop-leaves-user.avif'
+import DesktopLeavesUserWebp from './desktop-leaves-user.webp'
+import DesktopLeavesUserPng from './desktop-leaves-user.png'
 
-import MainPageImgAvif from './main-page-image.avif'
-import MainPageImgWebp from './main-page-image.webp'
-import MainPageImgPng from './main-page-image.png'
+import MainPageImgAvif from './fruit-photo-desk-main.avif'
+import MainPageImgWebp from './fruit-photo-desk-main.webp'
+import MainPageImgPng from './fruit-photo-desk-main.png'
 
 import FigureBackTabletAvif from './figure-background-tablet.avif'
 import FigureBackTabletWebp from './figure-background-tablet.webp'
@@ -38,6 +38,10 @@ import StrawberryMainTabletAvif from './strawberry-main-tablet.avif'
 import StrawberryMainTabletWebp from './strawberry-main-tablet.webp'
 import StrawberryMainTabletPng from './strawberry-main-tablet.png'
 
+import StrawberryLoginTabletAvif from './strawberry-login-registr-tablet.avif'
+import StrawberryLoginTabletWebp from './strawberry-login-registr-tablet.webp'
+import StrawberryLoginTabletPng from './strawberry-login-registr-tablet.png'
+
 export {
     FigureBackgroundAvif,
     FigureBackgroundWebp,
@@ -45,9 +49,9 @@ export {
     DesktopGuestAvif,
     DesktopGuestWebp,
     DesktopGuestPng,
-    DesktopLeavesAuthAvif,
-    DesktopLeavesAuthWebp,
-    DesktopLeavesAuthPng,
+    DesktopLeavesUserAvif,
+    DesktopLeavesUserWebp,
+    DesktopLeavesUserPng,
     MainPageImgAvif,
     MainPageImgWebp,
     MainPageImgPng,
@@ -68,5 +72,8 @@ export {
     MainpageTabletLeavesPng,
     StrawberryMainTabletAvif,
     StrawberryMainTabletWebp,
-    StrawberryMainTabletPng
+    StrawberryMainTabletPng,
+    StrawberryLoginTabletAvif,
+    StrawberryLoginTabletWebp,
+    StrawberryLoginTabletPng
 }

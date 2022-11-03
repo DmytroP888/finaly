@@ -4,46 +4,45 @@ import {
     WHITE,
     GRAY_LIGHT,
     GRAY_BLUE,
-    GRAY_DARK,
     ORANGE_RED,
     ORANGE_RED_SHADOW
 } from "../../assets/themes/colors"
 
-export const WrapperCalcform = styled.article` 
+export const WrapperLoginform = styled.article` 
     display: flex;
     flex-direction: column;
     position: absolute;
     width: 545px;
     height: 343px;
     left: 16px;
-    top: 293px;
-    z-index: 3;
+    top: 306px;
+    z-index: 4;
     @media (max-width: 1000px){
         left: 32px;
-        top: 180px;
+        top: 240px;
     }
     @media (max-width: 600px){
         width: 93%;
         left: 20px;
-        top: 150px;
+        top: 120px;
+        display: flex;
+        align-items: center;
     }
 `;
 
-export const BoxcontrolWidth = styled.div`
-    @media (max-width: 600px){
-        max-width: 280px;
-    }
-`;
-
-export const TitleCalcform = styled.h1` 
-    font-family: "Verdana-700";
-    font-size: 34px;
-    line-height: 41px;
-    color: ${GRAY_DARK};
+export const TitleLoginform = styled.h1` 
+    font-family: 'GothamPro-700';
+    font-size: 14px;
+    line-height: 13px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: ${ORANGE_RED};
     @media (max-width: 600px){
         font-family: "Verdana-700";
         font-size: 18px;
         line-height: 26px;
+        text-align: center;
+        line-height: 17px;
     }
 `;
 
@@ -55,6 +54,7 @@ export const FormBlockInputs = styled.form`
     @media (max-width: 600px){
         padding-top: 0px;
         max-width: 241px;
+        margin-top: 20px;
 `;
 
 export const LeftBlockInputs = styled.div`
@@ -81,20 +81,9 @@ export const BlockInputs = styled.div`
     letter-spacing: 0.04em;
     color: ${GRAY_BLUE};
     @media (max-width: 600px){
-        height: 24px;
-        margin: 32px 32px 0px 0px;
+        height: 28px;
+        margin: 40px 32px 0px 0px;
         display: flex;
-`;
-
-export const TitleRadio = styled(BlockInputs)`
-    @media (max-width: 600px){
-        height: 16px;
-        margin: 32px 32px 0px 0px;
-        border-bottom: none;
-`;
-
-export const BlockRadio = styled.div`
-    display: flex;
 `;
 
 export const Input = styled.input`
@@ -111,57 +100,11 @@ export const Input = styled.input`
 export const LabelInput = styled.label`
 `;
 
-export const LabelRadio = styled.label`
-    font-family: "Verdana-400";
-    color: ${GRAY_BLUE};
-    font-size: 14px;
-    line-height: 17px;
-    letter-spacing: 0.04em;
-    position: absolute;
-    display: flex;
-    margin: 0px -14px 0px 0px;
-`;
-
-
-
-export const InputRadio = styled.input`
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    opacity: 0;
-    margin: -1px;
-    &:checked + ${LabelRadio} {
-        font-family: "Verdana-700";
-        color: ${ORANGE_RED};
-    };
-`;
-
-export const RadioChecked = styled.div`
-    margin: 8px 45px 0px 0px;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: ${WHITE};
-    border: 1px solid ${GRAY_LIGHT};
-    cursor: pointer;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    ${InputRadio}:checked  {
-        background: ${ORANGE_RED};
-        margin: 4px;
-        border-radius: 50%;
-        opacity: 1;
-        height: 10px;
-        width: 10px; 
-    };
-`;
-
-export const ButtonCalcform = styled.button`
-    margin-top: 291px;    
-    width: 210px;
-    height: 43px;
-    left: 323px;
+export const ButtonLogin = styled.button`
+    margin-top: 206px; 
+    width: 181px;
+    height: 44px;   
+    left: 0px;
     position: absolute;
     background: ${ORANGE_RED};
     box-shadow: 0px 4px 10px ${ORANGE_RED_SHADOW};
@@ -176,14 +119,37 @@ export const ButtonCalcform = styled.button`
     color: ${WHITE};
     cursor: pointer;
     z-index: 5;
-    @media (max-width: 1000px){
-        left: 0px;
-        z-index: 5;
-    }
     @media (max-width: 600px){
         margin: 0 auto;
         left: -5%;
         right: 0;
-        top: 393px;
+        top: 233px;
+    }
+`;
+
+export const ButtonRegister = styled.button`
+    margin-top: 206px; 
+    width: 181px;
+    height: 44px;   
+    left: 229px;
+    position: absolute;
+    background: ${WHITE};
+    border: 2px solid ${ORANGE_RED};
+    border-radius: 30px;
+    font-family: "Verdana-700";
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.04em;
+    color: ${ORANGE_RED};
+    cursor: pointer;
+    z-index: 5;
+    @media (max-width: 600px){
+        margin: 0 auto;
+        left: -5%;
+        right: 0;
+        top: 297px;
     }
 `;
